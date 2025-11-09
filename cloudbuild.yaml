@@ -3,6 +3,10 @@ steps:
     args: ["build", "-t", "asia-south1-docker.pkg.dev/$PROJECT_ID/flask-repo/flask-app", "."]
   - name: "gcr.io/cloud-builders/docker"
     args: ["push", "asia-south1-docker.pkg.dev/$PROJECT_ID/flask-repo/flask-app"]
+
 images:
   - "asia-south1-docker.pkg.dev/$PROJECT_ID/flask-repo/flask-app"
+
+options:
+  logging: CLOUD_LOGGING_ONLY
 
